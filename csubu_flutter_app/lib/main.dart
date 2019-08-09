@@ -51,6 +51,8 @@ class _AppHomePageState extends State<AppHomePage> {
   var _loading = true;
   var _page = 0;
 
+  
+
   _getStudents() async {
     var url = 'http://cs.sci.ubu.ac.th:7512/topic-1/Pattaraporn_59110440309/_search?from=${_page*10}&size=10';
     const headers = { 'Content-Type': 'application/json; charset=utf-8' };
@@ -93,7 +95,7 @@ class _AppHomePageState extends State<AppHomePage> {
             title: Row(
                   children: <Widget>[
                     // Image.asset('assets/images/csubu-bw.png', width: 48, height: 48),
-                    CircleAvatar(backgroundImage: NetworkImage('${student["image"]}',width:45,height:45)),
+                    Image.network('${student["image"]}',width:45,height:45),
                     Expanded(child: Text(student["name"]))
                   ]
                 ),
